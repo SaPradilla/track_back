@@ -30,7 +30,7 @@ export class Server{
 
 
         // Ruta principal
-        this.app.use( this.routes)
+        this.app.use('/api',this.routes)
 
         this.app.listen(this.port,()=>{
             console.log(`Server corriendo en http://localhost:${this.port}`)  

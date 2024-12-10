@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { AuthController } from "./controller";
+import { AuthDatasourceImpl, AuthRepositoryImpl } from "../../infrastructure";
 // import { AuthDatasourceImpl, AuthRepositoryImpl } from "../../infrastructure";
 
 export class AuthRoutes {
@@ -8,16 +9,15 @@ export class AuthRoutes {
         
         const router = Router();
         // 
-        // const datasource = new AuthDatasourceImpl()
+        const datasource = new AuthDatasourceImpl()
 
-        // const authRepository = new AuthRepositoryImpl(datasource)
+        const authRepository = new AuthRepositoryImpl(datasource)
         
-        // const controller = new AuthController(authRepository);
+        const controller = new AuthController(authRepository);
 
-        // // Rutas principales
 
-        // router.post('/login', controller.loginUser)
-        // router.post('/register', controller.registerUser)
+        router.post('/login', controller.loginUser)
+        router.post('/register', controller.registerUser)
         
         // router.get('/',AuthMiddleware.validateJWT ,controller.getUsers)
 

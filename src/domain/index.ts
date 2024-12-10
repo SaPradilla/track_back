@@ -5,3 +5,6 @@ export * from './entities/user.entity';
 export * from './errors/custom.error';
 export * from './repositories/auth.repositories';
 export * from './use-cases/auth/register-user.use-case'
+
+export * from './interfaces/auth.interfaces';
+export * from './interfaces/task.interfaces';
